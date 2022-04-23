@@ -9,6 +9,11 @@ const server = http.createServer((req, res) =>{
         res.writeHead(200, {'content-type': 'text/html'})
         res.write(data)
         res.end()
+    }else  if(req.url == '/home'){
+        const data = fs.readFileSync('routeTask/index.html', 'utf-8')
+        res.writeHead(200, {'content-type': 'text/html'})
+        res.write(data)
+        res.end()
     }else  if(req.url == '/contact'){
         const data = fs.readFileSync('routeTask/contact.html', 'utf-8')
         res.writeHead(200, {'content-type': 'text/html'})
